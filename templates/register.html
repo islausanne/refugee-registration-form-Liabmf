@@ -6,5 +6,12 @@
 </head>
 <body>
     <img src="/static/Logo.png" width="300px" height="93px"</img>
+<form method="POST" action="{{ url_for('submit_form') }}">
+  <p><input type="text" name="name" placeholder="Full name" required></p>
+  <p><input type="text" name="country" placeholder="Country of origin" required></p>
+  <p><input type="number" name="age" placeholder="Age" required></p>
+  <p><input type=medical" medical="medical" placeholder="Medical issues" required></p>
+  <p><button type="submit">Submit</button></p>
+</form>
 </body>
 </html>

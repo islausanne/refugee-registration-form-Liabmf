@@ -5,22 +5,23 @@
     <title>View</title>
 </head>
 <body>
-    <img src="/static/Logo.png" width="300px" height="93px"</img>
-{% extends 'base.html' %}
+{% extends 'menu.html' %}
 {% block content %}
-<h2>Registered Refugees</h2>
 {% if registrations %}
   <h2>Registered Refugees</h2>
 <table border="1">
   <tr>
     <th>Name</th>
+    <th>Last name</th>
     <th>Country</th>
     <th>Age</th>
     <th>Medical</th>
+
   </tr>
   {% for person in registrations %}
   <tr>
     <td>{{ person.name }}</td>
+    <td>{{ person.lname }}</td>
     <td>{{ person.country }}</td>
     <td>{{ person.age }}</td>
     <td>{{ person.medical }}</td>

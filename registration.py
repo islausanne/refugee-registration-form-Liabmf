@@ -1,8 +1,11 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for
+import json
+import os
+
 
 app = Flask(__name__)
 
-@app.route('/menu')
+@app.route('/')
 def menu():
     return render_template('menu.html')
 
@@ -15,6 +18,7 @@ def register():
 @app.route('/submit', methods=['POST'])
 def submit_form():
     name = request.form['name']
+    lname = request.form['lname']
     country = request.form['country']
     age = request.form['age']
     medical = request.form['medical']
@@ -24,12 +28,12 @@ def submit_form():
             data = json.load(file)
     else:
         data = []
-    data.append({'name': name, 'country': country, 'age': age, 'medical': medical})
+    data.append({'name': name, 'lname': lname, 'country': country, 'age': age, 'medical': medical})
 
     with open('registrations.json', 'w') as file:
         json.dump(data, file, indent=2)
 
-    return redirect(url_for('index'))
+    return redirect(url_for('view_registrations'))
 
 @app.route('/edit')
 def edit():

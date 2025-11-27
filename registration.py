@@ -19,16 +19,17 @@ def register():
 def submit_form():
     name = request.form['name']
     lname = request.form['lname']
-    country = request.form['country']
     age = request.form['age']
-    medical = request.form['medical']
+    country = request.form['gender']
+    dob = request.form['dob']
+    gender = request.form['country']
 
     if os.path.exists('registrations.json'):
         with open('registrations.json', 'r') as file:
             data = json.load(file)
     else:
         data = []
-    data.append({'name': name, 'lname': lname, 'country': country, 'age': age, 'medical': medical})
+    data.append({'name': name, 'lname': lname, 'age': age, 'gender': gender, 'dob': dob, 'country': country})
 
     with open('registrations.json', 'w') as file:
         json.dump(data, file, indent=2)

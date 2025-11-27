@@ -13,18 +13,20 @@
   <tr>
     <th>Name</th>
     <th>Last name</th>
-    <th>Country</th>
     <th>Age</th>
-    <th>Medical</th>
+    <th>Country</th>
+    <th>Date of birth</th>
+    <th>Gender</th>
 
   </tr>
   {% for person in registrations %}
   <tr>
     <td>{{ person.name }}</td>
     <td>{{ person.lname }}</td>
-    <td>{{ person.country }}</td>
     <td>{{ person.age }}</td>
-    <td>{{ person.medical }}</td>
+    <td>{{ person.gender }}</td>
+    <td>{{person.dob}}</td>
+    <td>{{person.country}}</td>
   </tr>
   {% endfor %}
 </table>

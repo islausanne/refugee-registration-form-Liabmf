@@ -17,6 +17,10 @@
     <th>Country</th>
     <th>Date of birth</th>
     <th>Gender</th>
+    <th>Email</th>
+    <th>Phone number</th>
+    <th>Num of family members</th>
+    <th>Medical conditions</th>
 
   </tr>
   {% for person in registrations %}
@@ -27,6 +31,10 @@
     <td>{{ person.gender }}</td>
     <td>{{person.dob}}</td>
     <td>{{person.country}}</td>
+    <td>{{person.email}}</td>
+    <td>{{person.number}}</td>
+    <td>{{person.family}}</td>
+    <td>{{person.medical}}</td>
   </tr>
   {% endfor %}
 </table>

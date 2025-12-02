@@ -23,13 +23,17 @@ def submit_form():
     country = request.form['gender']
     dob = request.form['dob']
     gender = request.form['country']
+    email = request.form['email']
+    number = request.form['number']
+    family = request.form['family']
+    medical = request.form['medical']
 
     if os.path.exists('registrations.json'):
         with open('registrations.json', 'r') as file:
             data = json.load(file)
     else:
         data = []
-    data.append({'name': name, 'lname': lname, 'age': age, 'gender': gender, 'dob': dob, 'country': country})
+    data.append({'name': name, 'lname': lname, 'age': age, 'gender': gender, 'dob': dob, 'country': country, 'email': email, 'number': number, family: family, 'medical': medical})
 
     with open('registrations.json', 'w') as file:
         json.dump(data, file, indent=2)

@@ -5,15 +5,17 @@
     <title>Register</title>
 </head>
 <body>
-<p><img src="/static/basic.png" width="50px" height="65px"</img> <h2>Personal information</h2></p>
 
+{% extends 'menu.html' %}
+
+
+{% block content %}
 <form method="POST" action="{{ url_for('submit_form') }}">
     <p><input type="text" name="name" placeholder="First name" required>
   <input type="text" name="lname" placeholder="Last name" required></p>
 
     <p><input type="number" name="age" placeholder="Age" required>
-
-  <select id="gender" name="gender">
+        <select id="gender" name="gender">
     <option value="gender">Gender</option>
     <option value="female">female</option>
     <option value="male">male</option>
@@ -23,9 +25,12 @@
     <p><input type="date" name="dob" placeholder="Date of birth" required>
     <input type="text" name="country" placeholder="Country of origin" required></p>
 
-    <hr>
-<p><img src="/static/globe.png" width="50px" height="50px"</img> <h2>Personal information 2</h2></p>
-  <p><button type="submit">Submit </button></p>
+    <p><input type="text" name="email" placeholder="Email">
+    <input type="number" name="number" placeholder="Phone number"</p>
+    <p><input type="number" name="family" placeholder="Num of family members">
+    <input type="text" name="medical" placeholder="Medical conditions"></p>
+      <p><button type="submit">Submit </button></p>
 </form>
+{% endblock %}
 </body>
 </html>

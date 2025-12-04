@@ -47,6 +47,7 @@ def submit_form():
 
     return redirect(url_for('menu'))
 
+
 @app.route('/edit')
 def edit():
     return render_template('edit.html')

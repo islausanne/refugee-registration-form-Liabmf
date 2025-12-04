@@ -21,6 +21,7 @@
     <th>Phone number</th>
     <th>Num of family members</th>
     <th>Medical conditions</th>
+    <th>Anything else we should know</th>
 
   </tr>
   {% for person in registrations %}
@@ -35,6 +36,7 @@
     <td>{{person.number}}</td>
     <td>{{person.family}}</td>
     <td>{{person.medical}}</td>
+    <td>{{person.anything}}</td>
   </tr>
   {% endfor %}
 </table>

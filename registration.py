@@ -1,6 +1,11 @@
 """
+Refugee Registration website
 This is a refugee registration form, where refugees can enter in their data and then view their own and other entries
+by Lia Foulds
+09/12/25
 """
+
+#this is importing different flask features so that i can use them in my code
 from flask import Flask, request, render_template, redirect, url_for
 import json
 import os
@@ -34,10 +39,12 @@ def submit_form():
     medical = request.form['medical']
     anything = request.form['anything']
 
+#here, it's checking to see if any registrations actually exist
     if os.path.exists('registrations.json'):
         with open('registrations.json', 'r') as file:
             data = json.load(file)
 #and then here is where it appends the data that has just been saved as a variable and saves it as a list under the variable name 'data'
+#that way when you go to the view page, you can see past registrations
     else:
         data = []
     data.append({'name': name, 'lname': lname, 'age': age, 'gender': gender, 'dob': dob, 'country': country, 'email': email, 'number': number, family: family, 'medical': medical, anything: anything})
@@ -48,10 +55,7 @@ def submit_form():
     return redirect(url_for('menu'))
 
 
-@app.route('/edit')
-def edit():
-    return render_template('edit.html')
-
+#this is the app route for the view page, the code is telling it to load up the past registrations data
 @app.route('/view')
 def view_registrations():
     with open('registrations.json', 'r') as file:

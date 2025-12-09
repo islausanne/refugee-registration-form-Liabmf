@@ -1,3 +1,4 @@
+<!-- This is my view page, this is where users can chest past registrations -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +6,13 @@
     <title>View</title>
 </head>
 <body>
+<!-- here, my code is "extending menu" what that basically means is that the code in the menu page will be on this page as well
+ and so the menu bar with links to other pages, the logo, and the split screen will be on this page-->
 {% extends 'menu.html' %}
 {% block content %}
 {% if registrations %}
   <h2>Registered Refugees</h2>
+<!-- This is how the table is coded in, everything between the <th></th> are title names for each section  -->
 <table border="1">
   <tr>
     <th>Name</th>
@@ -22,7 +26,7 @@
     <th>Num of family members</th>
     <th>Medical conditions</th>
     <th>Anything else we should know</th>
-
+<!-- and then here is where the actual data goes, it loads it and puts it in the table -->
   </tr>
   {% for person in registrations %}
   <tr>
@@ -40,7 +44,7 @@
   </tr>
   {% endfor %}
 </table>
-
+<!-- here is my else page, basically, if there are no registrations, it wont load any table -->
 {% else %}
   <p>No registrations found yet.</p>
 {% endif %}

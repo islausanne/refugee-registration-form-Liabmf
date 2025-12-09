@@ -1,4 +1,4 @@
-
+<!-- This is my registration page, it has all the boxes that need to be filled out to be registered as a refugee -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,16 +6,21 @@
     <title>Register</title>
 </head>
 <body>
-
+<!-- this is where it also extends the menu, just like in my view page -->
 {% extends 'menu.html' %}
 
 {% block content %}
 <p><h2>Register</h2></p>
+<!-- This this code is just saying that all the answers will be submitted and saved afterwords -->
 <form method="POST" action="{{ url_for('submit_form') }}">
+<!--these are my regular input boxes, by "type" is means what type of box it is so for example "text" just means the user is expected to write something
+ the placeholder is what the user will see inside the box before they've even typed anything, the "style" is all just code to make the boxes th eright size
+ and the "required" means that is the user leaves it blank, then it wont let them submit the page and an error message will pop up-->
     <p><input type="text" name="name" placeholder="First name" style="width: 200px; height: 30px; font-size:15px;" required>
   <input type="text" name="lname" placeholder="Last name" style="width: 200px; height: 30px; font-size:15px;" required></p>
-
+<!-- This is a different type of input box, its type is number, so only numbers can be typed into this box-->
     <p><input type="number" name="age" placeholder="Age" style="width: 200px; height: 30px; font-size:15px;" required>
+<!-- This is also a different type of input box, its a multiple choice, select box instead  -->
         <select id="gender" name="gender" style="width: 200px; height: 30px; font-size:15px;">
     <option value="gender">Gender</option>
     <option value="female">female</option>
@@ -23,9 +28,10 @@
     <option value="prefer not to say">prefer not to say</option>
         </select></p>
     <p>Date of birth</p>
+<!-- This is also a different type of input box, its type is "date" sp a little calendar will pop up and the user can find and choose their birthdate  -->
     <p><input type="date" name="dob" placeholder="Date of birth" style="width: 200px; height: 30px; font-size:15px;" required>
     <input type="text" name="country" placeholder="Country of origin" style="width: 200px; height: 30px; font-size:15px;" required></p>
-
+<!-- every two input boxes are on one <p></p> that way they are on one line together, just to neaten up the code a little -->
     <p><input type="text" name="email" placeholder="Email" style="width: 200px; height: 30px; font-size:15px;">
     <input type="number" name="number" placeholder="Phone number" style="width: 200px; height: 30px; font-size:15px;"</p>
 
